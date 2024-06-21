@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Fernandez Desarrollador Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p>
+            Soy Sebastián Fernandez, un desarrollador web apasionado con 2 años de experiencia. Me especializo en crear sitios web modernos y dinámicos que ayudan a las empresas a alcanzar sus objetivos. 
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="project" id="project-template" style="display: none;">
+            <h2>Proyecto Título</h2>
+            <p>Descripción del proyecto</p>
+            <img src="" alt="Proyecto Imagen">
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sebastián Fernandez</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
