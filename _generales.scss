@@ -1,4 +1,5 @@
 $color-principal:#114358;
+$color-secundario-scroll: #1e7397;
 
 * {
     margin: 0;
@@ -8,6 +9,31 @@ $color-principal:#114358;
 
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+/* Estilizar la barra de desplazamiento para todo el documento */
+::-webkit-scrollbar {
+    width: 15px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilizar el "track" o riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: #1e7397; /* Color de fondo del riel */
+}
+
+/* Estilizar el "thumb" o control deslizante de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background: $color-principal; /* Color del control deslizante */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilizar el estado hover del "thumb" */
+::-webkit-scrollbar-thumb:hover {
+    background: darken($color-principal, 10%); /* Oscurecer el color al pasar el mouse */
 }
 
 .contenedor {
