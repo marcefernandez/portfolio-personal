@@ -1,54 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- agregar favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.ico">
     <title>Sebastián Fernandez Desarrollador Web</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="contenedor">
 
-    <section id="about">
-        <h2>Sobre Mí</h2>
-        <p>
-            Soy Sebastián Fernandez, un desarrollador web apasionado con 2 años de experiencia. Me especializo en crear sitios web modernos y dinámicos que ayudan a las empresas a alcanzar sus objetivos. 
-        </p>
-    </section>
+        <section id="hero">
+            <!-- <h1 class="animate__animated animate__bounceInLeft"> -->
+            <h1>
+                <span class="im">Hola! soy</span><br>
+                <span class="nombre">Sebastián </span>
+                <span class="apellido">Fernandez</span>
+            </h1>
+            <h2 class="animate__animated animate__flipInX titulo-desarrollador">Desarrollador Full-stack</h2>
+            <img src="images/foto-corporal.png" alt="Silueta" class="silueta">
+            <p class="animate__animated animate__flipInX hero-descripcion">Soy un desarrollador altamente motivado y autodidacta,<br> siempre estoy buscando nuevas tecnologías y formas <br> de mejorar mis habilidades. Tengo una gran pasión <br> por el desarrollo web y me enorgullece crear sitios <br> que sean funcionales, atractivos y fáciles de usar.</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com" class="icono-social" target="_blank"><img class="i-social" src="images/fb.png" alt="facebook"></a>
+                <a href="https://www.linkedin.com" class="icono-social" target="_blank"><img class="i-social" src="images/ldin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com" class="icono-social" target="_blank"><img class="i-social" src="images/IG.png" alt="instagram"></a>
+                <a href="https://www.x.com" class="icono-social" target="_blank"><img class="i-social" src="images/X.png" alt="x-twitter"></a>
+                
+            </div>
+        </section>
+        
+        <section id="seccion-menu">
+            <nav class="nav">
+                <ul class="ul">
+                    <li class="li"><a class="a" href="#about">Sobre Mí</a></li>
+                    <li class="li"><a class="a" href="#projects">Proyectos</a></li>
+                    <li class="li"><a class="a" href="#habilidades">Habilidades</a></li>
+                    <li class="li"><a class="a" href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
 
-    <section id="projects">
-        <h2>Proyectos</h2>
-        <div class="project" id="project-template" style="display: none;">
-            <h2>Proyecto Título</h2>
-            <p>Descripción del proyecto</p>
-            <img src="" alt="Proyecto Imagen">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="images/foto-perfil.jpg" alt="foto de perfil" class="imagen-perfil">
+                
+                <div class="circulo circulo-1"></div>
+            <div class="circulo circulo-2"></div>
+            <div class="circulo circulo-3"></div>
         </div>
-    </section>
+        </section>
+
+
+        <div id="projects">
+            <h2>Proyectos</h2>
+            <div class="todos-los-proyectos">
+                <div class="project" id="project-template" style="display: none;">
+                    <img class="img-projects" src="" alt="imagen proyecto">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>React js</li>
+                <li>Node js</li>
+                <li>Express js</li>
+                <li>MongoDB</li>
+                <li>Git</li>
+                <li>GitHub</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            
+                <div class="textarea-container">
+                    <label for="name">Mensaje:</label>
+                    <textarea name="message" id="message" required></textarea>
+                    <label for="fileUpload" class="upload-icon">
+                        <!-- Suponiendo que estés usando FontAwesome para el icono -->
+                        <i class="fas fa-upload"></i>
+                    </label>
+                    <input type="file" id="fileUpload" name="fileUpload" accept="image/*,.pdf" style="display: none;">
+                </div>
+            
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     
-    <section id="contact">
-        <h2>Contacto</h2>
-        <form id="contact-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+        <footer>
+            <p>&copy; 2024 Sebastián Fernandez</p>
+        </footer>
 
-            <label for="message">Mensaje:</label>
-            <textarea name="message" id="message" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Sebastián Fernandez</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

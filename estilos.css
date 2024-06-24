@@ -1,0 +1,164 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.contenedor {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #114358;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1ece7;
+  padding: 2rem;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #56009c;
+  clip-path: polygon(100% -30%, 100% 100%, 30% 100%);
+  z-index: 1;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  z-index: 2;
+}
+#hero .redes-sociales {
+  position: absolute;
+  right: 20px; /* Ajusta según necesites */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scrollDown 10s linear infinite;
+  z-index: 33;
+}
+#hero .redes-sociales .i-social {
+  width: 50px;
+  margin: 20px 0;
+  transition: transform 0.3s;
+}
+@keyframes scrollDown {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+#hero .redes-sociales:hover .i-social {
+  transform: scale(1.2);
+}
+#hero .im {
+  font-size: 4rem;
+  color: #090909;
+  z-index: 33;
+}
+#hero .nombre {
+  color: #56009c;
+  font-size: 4rem;
+  margin: 1rem 0;
+  z-index: 33;
+}
+#hero .apellido {
+  color: #090909;
+  font-size: 4rem;
+  z-index: 33;
+}
+#hero .titulo-desarrollador {
+  color: #090909;
+  background-color: #d9ff01;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 3rem;
+  animation-delay: 1s;
+  z-index: 33;
+}
+#hero .hero-descripcion {
+  background-color: #090909;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #d9ff01;
+  font-size: 18px;
+  margin-top: 3rem;
+  animation-delay: 2s;
+  z-index: 33;
+}
+#hero .silueta {
+  position: absolute;
+  right: 150px;
+  bottom: 0; /* Ajusta esto según necesites la altura*/
+  height: 90%; /* Ajusta esto para cambiar el tamaño de la imagen */
+  z-index: 2; /* Asegúrate de que no sobrepase otros elementos importantes */
+}
+
+#seccion-menu {
+  width: 100%;
+  background-color: #f1ece7;
+  padding: 30px 0 30px 0;
+}
+#seccion-menu .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#seccion-menu .nav .ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+#seccion-menu .nav .ul .li {
+  margin: 0 50px;
+}
+#seccion-menu .nav .ul .li .a {
+  text-decoration: none;
+  color: #090909;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+#seccion-menu .nav .ul .li .a:hover {
+  background-color: #090909;
+  color: #d9ff01;
+}
+
+.fixed-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegúrate de que el menú se muestre sobre otros contenidos */
+}
+
+/*# sourceMappingURL=estilos.css.map */

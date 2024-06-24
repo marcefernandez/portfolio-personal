@@ -1,43 +1,73 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Datos de proyectos (puedes añadir mas)
     const projects = [
         {
             title: 'Proyecto 1',
             description: 'Descripción del proyecto 1',
-            iamge: 'images/'
+            image: 'images/logo-personal.png'
         },
         {
             title: 'Proyecto 2',
             description: 'Descripción del proyecto 2',
-            iamge: 'images/'
+            image: 'images/logo-personal.png'
         },
         {
             title: 'Proyecto 3',
             description: 'Descripción del proyecto 3',
-            iamge: 'images/'
+            image: 'images/logo-personal.png'
+        },
+        {
+            title: 'Proyecto 4',
+            description: 'Descripción del proyecto 4',
+            image: 'images/logo-personal.png'
         }
     ];
 
-    // Rellenar proyecto de forma dinamica
     const projectContainer = document.getElementById('projects');
-    const projectTemplate = document.getElementById('project-template');
+    const projectTemplateOriginal = document.getElementById('project-template');
 
     projects.forEach(project => {
-        const projectElement = projectTemplate.cloneNode(true);
-        
-        projectElement.style.display = 'block';
-        projectElement.querySelector('h3').texContent = project.title;
-        projectElement.querySelector('p').texContent = project.description;
-        projectElement.querySelector('img').src = project.image;
-        projectElement.querySelector('img').alt = project.title;
-        projectContainer.appendChild(projectElement);
+        const projectTemplate = projectTemplateOriginal.cloneNode(true);
+        projectTemplate.removeAttribute('id'); // Eliminar el ID del template clonado
+        projectTemplate.style.display = 'block'; // Hacer visible el template
+
+        projectTemplate.querySelector('h3').textContent = project.title;
+        projectTemplate.querySelector('p').textContent = project.description;
+        projectTemplate.querySelector('img').src = project.image;
+        projectTemplate.querySelector('img').alt = 'Imagen de ' + project.title;
+        projectContainer.appendChild(projectTemplate);
     });
 
-    // Manejar el envio del formulario de contacto
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         alert('Formulario enviado');
         contactForm.reset();
+    });
+});
+
+// Funcionalidad para redes sociales
+document.querySelectorAll('.icono-social').forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+        document.querySelector('.redes-sociales').style.animationPlayState = 'paused';
+    });
+
+    icon.addEventListener('mouseout', () => {
+        document.querySelector('.redes-sociales').style.animationPlayState = 'running';
+    });
+});
+
+
+// Funcionalidad para menú fijo
+document.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('scroll', function() {
+        var heroSection = document.getElementById('hero');
+        var menuSection = document.getElementById('seccion-menu');
+        var heroHeight = heroSection.offsetHeight; // Altura de la sección #hero
+
+        if (window.pageYOffset > heroHeight) {
+            menuSection.classList.add('fixed-menu');
+        } else {
+            menuSection.classList.remove('fixed-menu');
+        }
     });
 });
