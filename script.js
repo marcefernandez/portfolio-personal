@@ -60,11 +60,13 @@ document.querySelectorAll('.icono-social').forEach(icon => {
 // Funcionalidad para menú fijo
 document.addEventListener('DOMContentLoaded', (event) => {
     window.addEventListener('scroll', function() {
-        var heroSection = document.getElementById('hero');
-        var menuSection = document.getElementById('seccion-menu');
-        var heroHeight = heroSection.offsetHeight; // Altura de la sección #hero
+        const heroSection = document.getElementById('hero');
+        const menuSection = document.getElementById('seccion-menu');
+        const heroHeight = heroSection.offsetHeight; // Altura de la sección #hero
 
-        if (window.pageYOffset > heroHeight) {
+        // Si el scroll es mayor a la altura del hero, agregar la clase fixed-menu
+        // Tener en cuenta pageYOffset o scrollY
+        if (window.scrollY > heroHeight) {
             menuSection.classList.add('fixed-menu');
         } else {
             menuSection.classList.remove('fixed-menu');

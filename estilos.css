@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/* Declaración de @font-face */
+@font-face {
+  font-family: "Azonix";
+  src: url("fonts/Azonix.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +13,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Azonix", sans-serif;
 }
 
 html {
@@ -18,14 +25,9 @@ html {
   width: 15px; /* Ancho de la barra de desplazamiento */
 }
 
-/* Estilizar el "track" o riel de la barra de desplazamiento */
-::-webkit-scrollbar-track {
-  background: #1e7397; /* Color de fondo del riel */
-}
-
 /* Estilizar el "thumb" o control deslizante de la barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
-  background: #114358; /* Color del control deslizante */
+  background: #d9ff01; /* Color del control deslizante */
   border-radius: 10px; /* Bordes redondeados */
 }
 
@@ -37,7 +39,8 @@ html {
 .contenedor {
   width: 100%;
   margin: 0 auto;
-  background-color: #114358;
+  background-color: #090909;
+  color: #f1ece7;
 }
 
 #hero {
@@ -53,17 +56,6 @@ html {
   position: relative;
   overflow: hidden;
 }
-#hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #56009c;
-  clip-path: polygon(100% -30%, 100% 100%, 30% 100%);
-  z-index: 1;
-}
 #hero::after {
   content: "";
   position: absolute;
@@ -71,7 +63,7 @@ html {
   bottom: 10px;
   width: 30px;
   height: 30px;
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, #d9ff01 0%, rgba(217, 255, 1, 0) 70%);
   border-radius: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
@@ -103,20 +95,23 @@ html {
 #hero .redes-sociales:hover .i-social {
   transform: scale(1.2);
 }
-#hero .im {
-  font-size: 4rem;
+#hero .titulo-hero {
+  line-height: 1.5;
+}
+#hero .titulo-hero .im {
+  font-size: 3rem;
   color: #090909;
   z-index: 33;
 }
-#hero .nombre {
+#hero .titulo-hero .nombre {
   color: #56009c;
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 1rem 0;
   z-index: 33;
 }
-#hero .apellido {
+#hero .titulo-hero .apellido {
   color: #090909;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 33;
 }
 #hero .titulo-desarrollador {
@@ -124,7 +119,11 @@ html {
   background-color: #d9ff01;
   padding: 5px 10px;
   border-radius: 10px;
-  font-size: 3rem;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 2rem;
   animation-delay: 1s;
   z-index: 33;
 }
@@ -134,7 +133,7 @@ html {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   color: #d9ff01;
-  font-size: 18px;
+  font-size: 1rem;
   margin-top: 3rem;
   animation-delay: 2s;
   z-index: 33;
@@ -146,10 +145,51 @@ html {
   height: 90%; /* Ajusta esto para cambiar el tamaño de la imagen */
   z-index: 2; /* Asegúrate de que no sobrepase otros elementos importantes */
 }
+#hero .cubo-hero {
+  position: absolute;
+  align-items: center;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px 0 0 10px;
+  width: 650px;
+  height: 300px;
+  background-color: #d9ff01;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+#hero .cubo-hero .cubo-dev {
+  position: absolute;
+  color: #56009c;
+  font-size: 2rem;
+  top: 0;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 300px;
+  background-color: #090909;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#hero .cubo-hero .cubo-dev .span-dev {
+  position: absolute;
+  top: 65%;
+  font-size: 3.5rem;
+  transform: rotate(90deg);
+  display: block;
+}
+#hero .cubo-hero .cubo-dev .span-dev .ultima-letra {
+  margin-left: -7px; /* Acercar la ultima letra de dev */
+}
 
 #seccion-menu {
   width: 100%;
-  background-color: #f1ece7;
+  background-color: #090909;
   padding: 30px 0 30px 0;
 }
 #seccion-menu .nav {
@@ -167,16 +207,19 @@ html {
 }
 #seccion-menu .nav .ul .li .a {
   text-decoration: none;
-  color: #090909;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: bold;
+  margin: 10px;
   padding: 5px 10px;
   border-radius: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, padding 0.3s, margin 0.3s;
 }
 #seccion-menu .nav .ul .li .a:hover {
-  background-color: #090909;
-  color: #d9ff01;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 15px 0;
+  color: #56009c;
 }
 
 .fixed-menu {

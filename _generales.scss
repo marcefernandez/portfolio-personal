@@ -1,5 +1,19 @@
 $color-principal:#114358;
 $color-secundario-scroll: #1e7397;
+$segundo-fondo:#d9ff01;
+$color-oscuro: #090909;
+$segundo-complementario: #f1ece7;
+
+
+
+/* Declaración de @font-face */
+@font-face {
+    font-family: 'Azonix';
+    src: url('fonts/Azonix.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 * {
     margin: 0;
@@ -8,7 +22,8 @@ $color-secundario-scroll: #1e7397;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    // font-family: 'Roboto', sans-serif;
+    font-family:"Azonix", sans-serif;
 }
 
 html {
@@ -20,14 +35,9 @@ html {
     width: 15px; /* Ancho de la barra de desplazamiento */
 }
 
-/* Estilizar el "track" o riel de la barra de desplazamiento */
-::-webkit-scrollbar-track {
-    background: #1e7397; /* Color de fondo del riel */
-}
-
 /* Estilizar el "thumb" o control deslizante de la barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
-    background: $color-principal; /* Color del control deslizante */
+    background: $segundo-fondo; /* Color del control deslizante */
     border-radius: 10px; /* Bordes redondeados */
 }
 
@@ -39,5 +49,6 @@ html {
 .contenedor {
     width: 100%;
     margin: 0 auto;
-    background-color: $color-principal;
+    background-color: $color-oscuro;
+    color: $segundo-complementario;
 }
