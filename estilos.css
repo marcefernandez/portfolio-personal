@@ -39,7 +39,8 @@ html {
 .contenedor {
   width: 100%;
   margin: 0 auto;
-  background-color: #090909;
+  background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), #090909 50%);
+  background-attachment: fixed;
   color: #f1ece7;
 }
 
@@ -50,7 +51,6 @@ html {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #f1ece7;
   padding: 2rem;
   align-items: start;
   position: relative;
@@ -97,46 +97,64 @@ html {
 }
 #hero .titulo-hero {
   line-height: 1.5;
-}
-#hero .titulo-hero .im {
-  font-size: 3rem;
-  color: #090909;
-  z-index: 33;
+  padding-bottom: 5rem;
 }
 #hero .titulo-hero .nombre {
-  color: #56009c;
+  color: #ffffff;
   font-size: 3rem;
   margin: 1rem 0;
   z-index: 33;
 }
 #hero .titulo-hero .apellido {
-  color: #090909;
+  color: #ffffff;
   font-size: 3rem;
   z-index: 33;
 }
 #hero .titulo-desarrollador {
-  color: #090909;
-  background-color: #d9ff01;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-family: "Sedgwick Ave Display", cursive;
-  font-weight: 400;
-  font-style: italic;
+  color: #d9ff01;
+  font-family: sans-serif;
+  margin-top: -100px;
+  font-weight: 300;
   letter-spacing: 1px;
-  font-size: 2rem;
+  font-size: 3rem;
   animation-delay: 1s;
   z-index: 33;
 }
 #hero .hero-descripcion {
   background-color: #090909;
+  width: 35%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   color: #d9ff01;
   font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: 700;
   margin-top: 3rem;
-  animation-delay: 2s;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
   z-index: 33;
+}
+#hero .boton-contacto {
+  padding: 15px 30px;
+  border: none;
+  margin-top: 3rem;
+  margin-left: 7rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  background-color: #56009c;
+  animation-delay: 1.5s;
+  animation-duration: 3s;
+  color: #ffffff;
+}
+#hero .boton-contacto:hover {
+  background-color: #d9ff01;
+  color: #090909;
 }
 #hero .silueta {
   position: absolute;
@@ -154,7 +172,7 @@ html {
   border-radius: 10px 0 0 10px;
   width: 650px;
   height: 300px;
-  background-color: #d9ff01;
+  background: linear-gradient(to right, #ffe53b, #56009c);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: 1;
 }
@@ -189,8 +207,8 @@ html {
 
 #seccion-menu {
   width: 100%;
-  background-color: #090909;
   padding: 30px 0 30px 0;
+  border-top: 0.5px solid #ffffff;
 }
 #seccion-menu .nav {
   display: flex;
@@ -216,10 +234,10 @@ html {
   transition: background-color 0.3s, padding 0.3s, margin 0.3s;
 }
 #seccion-menu .nav .ul .li .a:hover {
-  background-color: #ffffff;
   padding: 20px;
   margin: 15px 0;
   color: #56009c;
+  text-decoration: wavy;
 }
 
 .fixed-menu {
@@ -227,6 +245,65 @@ html {
   top: 0;
   width: 100%;
   z-index: 1000; /* Asegúrate de que el menú se muestre sobre otros contenidos */
+}
+
+#about {
+  color: #4d4d4d;
+  padding: 50px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+#about .about-titulo {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 70px;
+  color: #56009c;
+}
+#about .about-subtitulo {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -155px;
+  color: #d9ff01;
+  z-index: 1;
+}
+#about .about-container {
+  margin-top: 100px;
+}
+#about .about-container .about-info {
+  display: flex;
+  align-items: center;
+}
+#about .about-container .about-info .imagen-perfil {
+  height: 300px;
+  border-radius: 10px;
+  margin-left: 50px;
+}
+#about .about-container .about-info .bio h3, #about .about-container .about-info .habilidades h3 {
+  color: #d9ff01;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 500px;
+  margin-bottom: 150px;
+}
+#about .about-container .about-info .bio p, #about .about-container .about-info .habilidades p {
+  margin-top: -20px;
+}
+#about .about-container .about-info li {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+#about .about-container .about-info li:hover {
+  background-color: #0062cc;
 }
 
 /*# sourceMappingURL=estilos.css.map */

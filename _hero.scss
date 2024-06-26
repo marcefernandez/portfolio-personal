@@ -6,6 +6,10 @@ $segundo-complementario: #f1ece7;
 $color-oscuro: #090909;
 $color-claro: #ffffff;
 
+// para gradientes
+$gradiente-1: #ffe53b;
+$gradiente-2: #00ffff;
+
 #hero {
     display: flex;
     flex-direction: column;
@@ -13,7 +17,7 @@ $color-claro: #ffffff;
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: $segundo-complementario;
+    // background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), $color-oscuro 50%);
     padding: 2rem;
     align-items: start;
     position: relative;
@@ -30,10 +34,10 @@ $color-claro: #ffffff;
         background: radial-gradient(circle, $segundo-fondo 0%, rgba($segundo-fondo, 0) 70%);
         border-radius: 50%;
         transform: translateX(-50%); // Centra el indicador
-        animation: bounce 2s infinite; // Aplica una animación de rebote
-        z-index: 2; // Asegúrate de que esté por encima de otros contenidos
+        animation: bounce 2s infinite;
+        z-index: 2;
     }
-
+    
     .redes-sociales {
         position: absolute;
         right: 20px; /* Ajusta según necesites */
@@ -43,7 +47,7 @@ $color-claro: #ffffff;
         align-items: center;
         animation: scrollDown 10s linear infinite;
         z-index: 33;
-
+        
         .i-social {
             width: 50px;
             margin: 20px 0;
@@ -63,52 +67,85 @@ $color-claro: #ffffff;
     .titulo-hero {
 
         line-height: 1.5;
-
-        .im {
-            font-size: 3rem;
-            color: $color-oscuro;
-            z-index: 33;
-        }
+        // padding-top: 5rem;
+        padding-bottom: 5rem;
+        
+        // .im {
+        //     font-size: 3rem;
+        //     color: $color-claro;
+        //     z-index: 33;
+        // }
         .nombre {
-            color: $primer-complementario;
+            color: $color-claro;
             font-size: 3rem;
             margin: 1rem 0;
             z-index: 33;
         }
         .apellido {
-            color: $color-oscuro;
+            color: $color-claro;
             font-size: 3rem;
             z-index: 33;
         }
     }
-
+    
     .titulo-desarrollador {
-        color: $color-oscuro;
-        background-color: $segundo-fondo;
-        padding: 5px 10px;
-        border-radius: 10px;
-        font-family: "Sedgwick Ave Display", cursive;
-        font-weight: 400;
-        font-style: italic;
+        color: $segundo-fondo;
+        // background-color: $segundo-fondo;
+        // padding: 10px 30px;
+        // border-radius: 10px;
+        // font-family: "Sedgwick Ave Display", cursive;
+        font-family:  sans-serif;
+        // padding-bottom: 5rem;
+        margin-top: -100px;
+        font-weight: 300;
+        // font-style: italic;
         letter-spacing: 1px;
-        font-size: 2rem;
+        font-size: 3rem;
         animation-delay: 1s;
         z-index: 33;
     }
-
+    
     .hero-descripcion {
         background-color: $color-oscuro;
+        width: 35%;
         padding: 20px;
         border-radius: 10px;
         // Ajusta la sombra para un efecto de relieve
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         color: $segundo-fondo;
         font-size: 1rem;
+        font-family: sans-serif;
+        font-weight: 700;
         margin-top: 3rem;
-        animation-delay: 2s;
+        animation-delay: 1s;
+        animation-duration: 1.5s;
         z-index: 33;
     }
+    
+    .boton-contacto {
+        padding: 15px 30px;
+        border: none;
+        margin-top: 3rem;
+        margin-left: 7rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        background-color: $primer-complementario;
+        animation-delay: 1.5s;
+        animation-duration: 3s;
+        color: $color-claro;
+    }
+    
+    .boton-contacto:hover {
+        background-color: $segundo-fondo;
+        color: $color-oscuro;
+    }
 
+    
     .silueta {
         position: absolute;
         right: 150px;
@@ -116,7 +153,7 @@ $color-claro: #ffffff;
         height: 90%; /* Ajusta esto para cambiar el tamaño de la imagen */
         z-index: 2; /* Asegúrate de que no sobrepase otros elementos importantes */
     }
-
+    
     .cubo-hero {
         position: absolute;
         align-items: center;
@@ -126,10 +163,11 @@ $color-claro: #ffffff;
         border-radius: 10px 0 0 10px;
         width: 650px;
         height: 300px;
-        background-color: $segundo-fondo;
+        background: linear-gradient(to right, $gradiente-1, $primer-complementario);
+        // background-color: $segundo-fondo;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         z-index: 1;
-
+        
         .cubo-dev {
             position: absolute;
             color: $primer-complementario;

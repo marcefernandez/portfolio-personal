@@ -3,8 +3,9 @@
 
 #seccion-menu {
     width: 100%;
-    background-color: $color-oscuro;
+    // background-color: $color-oscuro;
     padding: 30px 0 30px 0;
+    border-top: 0.5px solid $color-claro;
 
     .nav {
         display: flex;
@@ -30,10 +31,11 @@
                     transition: background-color 0.3s, padding 0.3s, margin 0.3s; // Añade transiciones para margin y padding
                 
                     &:hover {
-                        background-color: $color-claro;
+                        // background-color: $color-claro;
                         padding: 20px; // Aumenta el padding
                         margin: 15px 0; // Ajusta el margin para compensar el aumento de padding
                         color: $primer-complementario;
+                        text-decoration:wavy;
                     }
                 }
             

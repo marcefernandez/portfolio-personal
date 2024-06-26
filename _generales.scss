@@ -49,6 +49,7 @@ html {
 .contenedor {
     width: 100%;
     margin: 0 auto;
-    background-color: $color-oscuro;
+    background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), $color-oscuro 50%);
+    background-attachment: fixed;
     color: $segundo-complementario;
 }
