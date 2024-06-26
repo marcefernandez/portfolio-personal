@@ -247,63 +247,100 @@ html {
   z-index: 1000; /* Asegúrate de que el menú se muestre sobre otros contenidos */
 }
 
-#about {
-  color: #4d4d4d;
-  padding: 50px 0 0 0;
-  display: flex;
-  flex-direction: column;
-}
 #about .about-titulo {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  color: #f1ece7;
   font-size: 6rem;
-  text-align: center;
-  margin-bottom: 30px;
-  padding-top: 70px;
-  color: #56009c;
+  margin-bottom: 0;
+  margin-top: 180px;
+}
+#about .about-titulo span {
+  font-size: 6rem;
+  margin-top: -10px;
 }
 #about .about-subtitulo {
   display: flex;
   justify-content: center;
+  color: #56009c;
   font-size: 3rem;
-  text-align: center;
-  margin-top: -155px;
-  color: #d9ff01;
-  z-index: 1;
+  margin-top: -135px;
 }
 #about .about-container {
-  margin-top: 100px;
+  width: 100%;
+  padding-top: 50px;
+  margin-top: 90px;
 }
-#about .about-container .about-info {
+#about .about-container .about-descripcion {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  margin-left: 100px;
 }
-#about .about-container .about-info .imagen-perfil {
-  height: 300px;
+#about .about-container .about-descripcion .imagen-perfil {
+  width: auto;
+  height: 400px;
+  margin-left: 30px;
   border-radius: 10px;
-  margin-left: 50px;
 }
-#about .about-container .about-info .bio h3, #about .about-container .about-info .habilidades h3 {
-  color: #d9ff01;
-  font-size: 1.5rem;
+#about .about-container .about-descripcion .bio {
   display: flex;
-  justify-content: center;
-  margin-right: 500px;
-  margin-bottom: 150px;
+  flex-direction: column;
+  margin-left: 30px;
+  width: 50%;
 }
-#about .about-container .about-info .bio p, #about .about-container .about-info .habilidades p {
-  margin-top: -20px;
+#about .about-container .about-descripcion .bio h3 {
+  color: #d9ff01;
+  font-size: 3rem;
 }
-#about .about-container .about-info li {
-  background-color: #007bff;
+#about .about-container .about-descripcion .bio p {
   color: #ffffff;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 50px;
 }
-#about .about-container .about-info li:hover {
-  background-color: #0062cc;
+#about .about-container .habilidades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+#about .about-container .habilidades h3 {
+  color: #d9ff01;
+  font-size: 3rem;
+}
+#about .about-container .habilidades p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+#about .about-container .habilidades .habilidades-tecnolias {
+  margin-top: 20px;
+  font-size: 25px;
+  color: #56009c;
+}
+#about .about-container .habilidades ul {
+  border: #d9ff01 1px solid;
+  box-shadow: 0 0 10px #d9ff01;
+  background: rgba(86, 0, 156, 0.1);
+  width: 700px;
+  border-radius: 10px;
+  height: 400px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+#about .about-container .habilidades ul li {
+  position: absolute;
+  display: block;
+  margin: 0;
+  transition: transform 1s ease;
+}
+#about .about-container .habilidades ul li img {
+  width: 90px;
 }
 
 /*# sourceMappingURL=estilos.css.map */
