@@ -67,66 +67,109 @@ $gradiente-2: #00ffff;
     .titulo-hero {
 
         line-height: 1.5;
-        // padding-top: 5rem;
         padding-bottom: 5rem;
-        
-        // .im {
-        //     font-size: 3rem;
-        //     color: $color-claro;
-        //     z-index: 33;
-        // }
+
         .nombre {
             color: $color-claro;
-            font-size: 3rem;
+            font-size: 4rem;
             margin: 1rem 0;
             z-index: 33;
         }
+
         .apellido {
             color: $color-claro;
-            font-size: 3rem;
+            font-size: 4rem;
             z-index: 33;
         }
     }
     
     .titulo-desarrollador {
         color: $segundo-fondo;
-        // background-color: $segundo-fondo;
-        // padding: 10px 30px;
-        // border-radius: 10px;
-        // font-family: "Sedgwick Ave Display", cursive;
-        font-family:  sans-serif;
+        font-family: "Sedgwick Ave Display", cursive;
+        // font-family:  sans-serif;
         // padding-bottom: 5rem;
         margin-top: -100px;
         font-weight: 300;
-        // font-style: italic;
+        font-style: italic;
         letter-spacing: 1px;
-        font-size: 3rem;
+        font-size: 4rem;
         animation-delay: 1s;
         z-index: 33;
     }
     
-    .hero-descripcion {
-        background-color: $color-oscuro;
-        width: 35%;
-        padding: 20px;
+    .descripcion-hero {
+        border: #d9ff01 1px solid;
+        box-shadow: 0 0 10px #d9ff01;
+        background: rgba(86, 0, 156, 0.1);
+        width: 700px;
+        height: auto;
         border-radius: 10px;
+        // background-color: $color-oscuro;
+        // width: 35%;
+        padding: 20px;
         // Ajusta la sombra para un efecto de relieve
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        color: $segundo-fondo;
-        font-size: 1rem;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        // color: $segundo-fondo;
+        font-size: 1.5rem;
         font-family: sans-serif;
         font-weight: 700;
         margin-top: 3rem;
         animation-delay: 1s;
         animation-duration: 1.5s;
         z-index: 33;
+
+        .descripcion-hero-texto {
+            // Estilos para el párrafo principal
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .descripcion-hero-enfasis {
+            // Estilos para el texto enfatizado
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            color: $primer-complementario;
+        }
+    
+        .descripcion-hero-lista {
+            // Estilos para la lista
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 1rem;
+    
+            .descripcion-hero-item {
+                // Estilos para los elementos de la lista
+                display: flex;
+                align-items: center;
+                margin: 0.5rem 0 ;
+            }
+        }
+
+        .descripcion-hero-texto-2 {
+            // Estilos para el párrafo principal
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            color: $segundo-fondo;
+        
+        }
     }
     
     .boton-contacto {
         padding: 15px 30px;
         border: none;
         margin-top: 3rem;
-        margin-left: 7rem;
+        margin-left: 12rem;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         cursor: pointer;

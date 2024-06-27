@@ -22,7 +22,8 @@ html {
 
 /* Estilizar la barra de desplazamiento para todo el documento */
 ::-webkit-scrollbar {
-  width: 15px; /* Ancho de la barra de desplazamiento */
+  display: none; /* Ocultar la barra de desplazamiento */
+  width: 10px; /* Ancho de la barra de desplazamiento */
 }
 
 /* Estilizar el "thumb" o control deslizante de la barra de desplazamiento */
@@ -101,33 +102,35 @@ html {
 }
 #hero .titulo-hero .nombre {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 1rem 0;
   z-index: 33;
 }
 #hero .titulo-hero .apellido {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 4rem;
   z-index: 33;
 }
 #hero .titulo-desarrollador {
   color: #d9ff01;
-  font-family: sans-serif;
+  font-family: "Sedgwick Ave Display", cursive;
   margin-top: -100px;
   font-weight: 300;
+  font-style: italic;
   letter-spacing: 1px;
-  font-size: 3rem;
+  font-size: 4rem;
   animation-delay: 1s;
   z-index: 33;
 }
-#hero .hero-descripcion {
-  background-color: #090909;
-  width: 35%;
-  padding: 20px;
+#hero .descripcion-hero {
+  border: #d9ff01 1px solid;
+  box-shadow: 0 0 10px #d9ff01;
+  background: rgba(86, 0, 156, 0.1);
+  width: 700px;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  color: #d9ff01;
-  font-size: 1rem;
+  padding: 20px;
+  font-size: 1.5rem;
   font-family: sans-serif;
   font-weight: 700;
   margin-top: 3rem;
@@ -135,11 +138,46 @@ html {
   animation-duration: 1.5s;
   z-index: 33;
 }
+#hero .descripcion-hero .descripcion-hero-texto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#hero .descripcion-hero .descripcion-hero-enfasis {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: #56009c;
+}
+#hero .descripcion-hero .descripcion-hero-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+#hero .descripcion-hero .descripcion-hero-lista .descripcion-hero-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+#hero .descripcion-hero .descripcion-hero-texto-2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: #d9ff01;
+}
 #hero .boton-contacto {
   padding: 15px 30px;
   border: none;
   margin-top: 3rem;
-  margin-left: 7rem;
+  margin-left: 12rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -256,7 +294,7 @@ html {
   color: #f1ece7;
   font-size: 6rem;
   margin-bottom: 0;
-  margin-top: 180px;
+  margin-top: 150px;
 }
 #about .about-titulo span {
   font-size: 6rem;
@@ -317,7 +355,7 @@ html {
   line-height: 1.5;
   margin-top: 30px;
 }
-#about .about-container .habilidades .habilidades-tecnolias {
+#about .about-container .habilidades .habilidades-tecnologias {
   margin-top: 20px;
   font-size: 25px;
   color: #56009c;
@@ -327,8 +365,8 @@ html {
   box-shadow: 0 0 10px #d9ff01;
   background: rgba(86, 0, 156, 0.1);
   width: 700px;
-  border-radius: 10px;
   height: 400px;
+  border-radius: 10px;
   margin-top: 20px;
   position: relative;
   overflow: hidden;
@@ -340,6 +378,44 @@ html {
   transition: transform 1s ease;
 }
 #about .about-container .habilidades ul li img {
+  width: 90px;
+}
+#about .about-container .habilidades .herramientas-titulo {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about .about-container .habilidades .herramientas-titulo h3 {
+  color: #d9ff01;
+  font-size: 3rem;
+}
+#about .about-container .habilidades .herramientas-titulo p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+#about .about-container .habilidades .herramientas-tecnologias {
+  margin-top: 20px;
+  font-size: 25px;
+  color: #56009c;
+}
+#about .about-container .habilidades #herramientas-lista {
+  border: #d9ff01 2px solid;
+  width: 700px;
+  height: 400px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+#about .about-container .habilidades #herramientas-lista li {
+  position: absolute;
+  display: block;
+  margin: 0;
+  transition: transform 1s ease;
+}
+#about .about-container .habilidades #herramientas-lista li img {
   width: 90px;
 }
 

@@ -32,7 +32,8 @@ html {
 
 /* Estilizar la barra de desplazamiento para todo el documento */
 ::-webkit-scrollbar {
-    width: 15px; /* Ancho de la barra de desplazamiento */
+    display: none; /* Ocultar la barra de desplazamiento */
+    width: 10px; /* Ancho de la barra de desplazamiento */
 }
 
 /* Estilizar el "thumb" o control deslizante de la barra de desplazamiento */
