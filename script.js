@@ -1,3 +1,17 @@
+//volver arriba al recargar la página
+window.addEventListener('load', function() {
+    window.scrollTo(0, 0);
+});
+
+//Funcioanlidad para mosdificar el titulo de la pestaña cuando el usuario cambia de pestaña
+let previuosTitle = document.title;
+
+window.addEventListener('blur', () => {
+    previuosTitle = document.title;
+    document.title = '¡No me abandones 😢!';
+})
+
+// Json para la sección de proyectos
 document.addEventListener('DOMContentLoaded', function() {
     const projects = [
         {
@@ -75,141 +89,145 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // Funcionalidad en about me para que los iconos se muevan dentro del cuadro marcado por el ul
-    document.addEventListener("DOMContentLoaded", () => {
-        const ul = document.getElementById("habilidades-lista");
-        const lis = Array.from(ul.querySelectorAll("li"));
+document.addEventListener("DOMContentLoaded", () => {
+    const ul = document.getElementById("habilidades-lista");
+    const lis = Array.from(ul.querySelectorAll("li"));
 
-        function getRect(element) {
-            const transform = element.style.transform;
-            const [x, y] = transform.replace('translate(', '').replace('px)', '').split(', ').map(parseFloat);
-            return {
-                left: x,
-                top: y,
-                right: x + element.offsetWidth,
-                bottom: y + element.offsetHeight
+    function getRect(element) {
+        const transform = element.style.transform;
+        const [x, y] = transform.replace('translate(', '').replace('px)', '').split(', ').map(parseFloat);
+        return {
+            left: x,
+            top: y,
+            right: x + element.offsetWidth,
+            bottom: y + element.offsetHeight
+        };
+    }
+
+    function isOverlapping(rect1, rect2) {
+        return !(
+            rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
+            rect1.top > rect2.bottom
+        );
+    }
+
+    function moveElementRandomly(element, elements) {
+        const ulRect = ul.getBoundingClientRect();
+        const maxX = ulRect.width - element.offsetWidth;
+        const maxY = ulRect.height - element.offsetHeight;
+        let randomX, randomY, overlap, attempts = 0;
+
+        do {
+            overlap = false;
+            randomX = Math.random() * maxX;
+            randomY = Math.random() * maxY;
+            const newRect = {
+                left: randomX,
+                right: randomX + element.offsetWidth,
+                top: randomY,
+                bottom: randomY + element.offsetHeight
             };
-        }
 
-        function isOverlapping(rect1, rect2) {
-            return !(rect1.right < rect2.left ||
-                     rect1.left > rect2.right ||
-                     rect1.bottom < rect2.top ||
-                     rect1.top > rect2.bottom);
-        }
-
-        function moveElementRandomly(element, elements) {
-            const ulRect = ul.getBoundingClientRect();
-            const maxX = ulRect.width - element.offsetWidth;
-            const maxY = ulRect.height - element.offsetHeight;
-            let randomX, randomY, overlap, attempts = 0;
-
-            do {
-                overlap = false;
-                randomX = Math.random() * maxX;
-                randomY = Math.random() * maxY;
-                const newRect = {
-                    left: randomX,
-                    right: randomX + element.offsetWidth,
-                    top: randomY,
-                    bottom: randomY + element.offsetHeight
-                };
-
-                for (let otherElement of elements) {
-                    if (otherElement !== element) {
-                        const otherRect = getRect(otherElement);
-                        if (isOverlapping(newRect, otherRect)) {
-                            overlap = true;
-                            break;
-                        }
+            for (let otherElement of elements) {
+                if (otherElement !== element) {
+                    const otherRect = getRect(otherElement);
+                    if (isOverlapping(newRect, otherRect)) {
+                        overlap = true;
+                        break;
                     }
                 }
+            }
 
-                attempts++;
-                if (attempts > 50) break; // Prevent infinite loops
-            } while (overlap);
+            attempts++;
+            if (attempts > 50) break; // Prevent infinite loops
+        } while (overlap);
 
-            element.style.transform = `translate(${randomX}px, ${randomY}px)`;
-        }
+        element.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
 
-        function animateElements() {
-            lis.forEach(li => {
-                moveElementRandomly(li, lis);
-            });
-        }
-
+    function animateElements() {
         lis.forEach(li => {
-            moveElementRandomly(li, lis); // Inicializar posiciones aleatorias
+            moveElementRandomly(li, lis);
         });
+    }
 
-        setInterval(animateElements, 2000); // Mueve las imágenes cada 2 segundos
+    lis.forEach(li => {
+        moveElementRandomly(li, lis); // Inicializar posiciones aleatorias
     });
 
+    setInterval(animateElements, 2000); // Mueve las imágenes cada 2 segundos
+});
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const ul = document.getElementById("herramientas-lista");
-        const lis = Array.from(ul.querySelectorAll("li"));
 
-        function getRect(element) {
-            const transform = element.style.transform;
-            const [x, y] = transform.replace('translate(', '').replace('px)', '').split(', ').map(parseFloat);
-            return {
-                left: x,
-                top: y,
-                right: x + element.offsetWidth,
-                bottom: y + element.offsetHeight
+document.addEventListener("DOMContentLoaded", () => {
+    const ul = document.getElementById("herramientas-lista");
+    const lis = Array.from(ul.querySelectorAll("li"));
+
+    function getRect(element) {
+        const transform = element.style.transform;
+        const [x, y] = transform.replace('translate(', '').replace('px)', '').split(', ').map(parseFloat);
+        return {
+            left: x,
+            top: y,
+            right: x + element.offsetWidth,
+            bottom: y + element.offsetHeight
+        };
+    }
+
+    function isOverlapping(rect1, rect2) {
+        return !(
+            rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
+            rect1.top > rect2.bottom
+        );
+    }
+
+    function moveElementRandomly(element, elements) {
+        const ulRect = ul.getBoundingClientRect();
+        const maxX = ulRect.width - element.offsetWidth;
+        const maxY = ulRect.height - element.offsetHeight;
+        let randomX, randomY, overlap, attempts = 0;
+
+        do {
+            overlap = false;
+            randomX = Math.random() * maxX;
+            randomY = Math.random() * maxY;
+            const newRect = {
+                left: randomX,
+                right: randomX + element.offsetWidth,
+                top: randomY,
+                bottom: randomY + element.offsetHeight
             };
-        }
 
-        function isOverlapping(rect1, rect2) {
-            return !(rect1.right < rect2.left ||
-                     rect1.left > rect2.right ||
-                     rect1.bottom < rect2.top ||
-                     rect1.top > rect2.bottom);
-        }
-
-        function moveElementRandomly(element, elements) {
-            const ulRect = ul.getBoundingClientRect();
-            const maxX = ulRect.width - element.offsetWidth;
-            const maxY = ulRect.height - element.offsetHeight;
-            let randomX, randomY, overlap, attempts = 0;
-
-            do {
-                overlap = false;
-                randomX = Math.random() * maxX;
-                randomY = Math.random() * maxY;
-                const newRect = {
-                    left: randomX,
-                    right: randomX + element.offsetWidth,
-                    top: randomY,
-                    bottom: randomY + element.offsetHeight
-                };
-
-                for (let otherElement of elements) {
-                    if (otherElement !== element) {
-                        const otherRect = getRect(otherElement);
-                        if (isOverlapping(newRect, otherRect)) {
-                            overlap = true;
-                            break;
-                        }
+            for (let otherElement of elements) {
+                if (otherElement !== element) {
+                    const otherRect = getRect(otherElement);
+                    if (isOverlapping(newRect, otherRect)) {
+                        overlap = true;
+                        break;
                     }
                 }
+            }
 
-                attempts++;
-                if (attempts > 50) break; // Prevent infinite loops
-            } while (overlap);
+            attempts++;
+            if (attempts > 50) break; // Prevent infinite loops
+        } while (overlap);
 
-            element.style.transform = `translate(${randomX}px, ${randomY}px)`;
-        }
+        element.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
 
-        function animateElements() {
-            lis.forEach(li => {
-                moveElementRandomly(li, lis);
-            });
-        }
-
+    function animateElements() {
         lis.forEach(li => {
-            moveElementRandomly(li, lis); // Inicializar posiciones aleatorias
+            moveElementRandomly(li, lis);
         });
+    }
 
-        setInterval(animateElements, 2000); // Mueve las imágenes cada 2 segundos
+    lis.forEach(li => {
+        moveElementRandomly(li, lis); // Inicializar posiciones aleatorias
     });
+
+    setInterval(animateElements, 2000); // Mueve las imágenes cada 2 segundos
+});

@@ -9,6 +9,7 @@ $gradiente-1: #ffe53b;
 $gradiente-2: #00ffff;
 
 #about {
+
     .about-titulo {
         display: flex;
         flex-direction: column;
@@ -18,7 +19,7 @@ $gradiente-2: #00ffff;
         color: $segundo-complementario;
         font-size: 6rem;
         margin-bottom: 0;
-        margin-top: 150px;
+        margin-top: 100px;
     
         span {
             font-size: 6rem;
@@ -31,7 +32,7 @@ $gradiente-2: #00ffff;
         justify-content: center;
         color: $primer-complementario;
         font-size: 3rem;
-        margin-top: -135px;
+        margin-top: -130px;
     }
 
     .about-container {

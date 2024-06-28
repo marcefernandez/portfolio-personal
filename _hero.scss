@@ -14,14 +14,15 @@ $gradiente-2: #00ffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     width: 100%;
     height: 100vh;
     // background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), $color-oscuro 50%);
-    padding: 2rem;
+    padding-left: 2rem;
     align-items: start;
     position: relative;
     overflow: hidden;
+    text-align: center;
 
     &::after {
         content: '';
@@ -49,8 +50,8 @@ $gradiente-2: #00ffff;
         z-index: 33;
         
         .i-social {
-            width: 50px;
-            margin: 20px 0;
+            width: 3rem;
+            margin: 1.25rem 0;
             transition: transform 0.3s;
         }
     }
@@ -71,49 +72,42 @@ $gradiente-2: #00ffff;
 
         .nombre {
             color: $color-claro;
-            font-size: 4rem;
+            font-size: 3rem;
             margin: 1rem 0;
             z-index: 33;
         }
 
         .apellido {
             color: $color-claro;
-            font-size: 4rem;
+            font-size: 3rem;
             z-index: 33;
         }
     }
     
     .titulo-desarrollador {
         color: $segundo-fondo;
-        font-family: "Sedgwick Ave Display", cursive;
-        // font-family:  sans-serif;
-        // padding-bottom: 5rem;
-        margin-top: -100px;
+        // padding-left: 2rem;
+        margin-top: -6.25rem;
         font-weight: 300;
         font-style: italic;
         letter-spacing: 1px;
-        font-size: 4rem;
+        font-size: 2.3rem;
         animation-delay: 1s;
         z-index: 33;
     }
     
     .descripcion-hero {
-        border: #d9ff01 1px solid;
+        border: 1px solid #d9ff01;
         box-shadow: 0 0 10px #d9ff01;
         background: rgba(86, 0, 156, 0.1);
-        width: 700px;
+        width: 40%;
         height: auto;
         border-radius: 10px;
-        // background-color: $color-oscuro;
-        // width: 35%;
-        padding: 20px;
-        // Ajusta la sombra para un efecto de relieve
-        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        // color: $segundo-fondo;
-        font-size: 1.5rem;
+        padding: 1.25rem;
+        font-size: 1rem;
         font-family: sans-serif;
         font-weight: 700;
-        margin-top: 3rem;
+        margin-top: 1rem;
         animation-delay: 1s;
         animation-duration: 1.5s;
         z-index: 33;
@@ -140,9 +134,7 @@ $gradiente-2: #00ffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            list-style-type: none;
-            padding: 0;
+            justify-content: center;     
             margin-top: 1rem;
     
             .descripcion-hero-item {
@@ -166,7 +158,7 @@ $gradiente-2: #00ffff;
     }
     
     .boton-contacto {
-        padding: 15px 30px;
+        padding: 1rem 1.875rem;
         border: none;
         margin-top: 3rem;
         margin-left: 12rem;
@@ -187,14 +179,13 @@ $gradiente-2: #00ffff;
         background-color: $segundo-fondo;
         color: $color-oscuro;
     }
-
     
     .silueta {
         position: absolute;
-        right: 150px;
-        bottom: 0; /* Ajusta esto según necesites la altura*/
-        height: 90%; /* Ajusta esto para cambiar el tamaño de la imagen */
-        z-index: 2; /* Asegúrate de que no sobrepase otros elementos importantes */
+        right: 9.375rem;
+        bottom: 0; /* Ajustar esto según la altura*/
+        height: 90%; /* Ajustar esto para cambiar el tamaño de la imagen */
+        z-index: 2;
     }
     
     .cubo-hero {
@@ -204,22 +195,22 @@ $gradiente-2: #00ffff;
         top: 50%; // Posiciona el inicio del cubo a la mitad de la altura de la pantalla
         transform: translateY(-50%); // Desplaza el cubo hacia arriba la mitad de su altura para centrarlo verticalmente
         border-radius: 10px 0 0 10px;
-        width: 650px;
-        height: 300px;
+        width: 90%;
+        max-width: 40.625rem;
+        height: 18.75rem;
         background: linear-gradient(to right, $gradiente-1, $primer-complementario);
-        // background-color: $segundo-fondo;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         z-index: 1;
         
         .cubo-dev {
             position: absolute;
             color: $primer-complementario;
-            font-size: 2rem;
+            font-size: 1.25rem;
             top: 0;
             left: 15%;
             transform: translate(-50%, -50%);
-            width: 100px;
-            height: 300px;
+            width: 6.25rem;
+            height: 18.75rem;
             background-color: $color-oscuro;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             border-radius: 10px;
@@ -229,20 +220,81 @@ $gradiente-2: #00ffff;
             align-items: center;
             text-align: center;
         
-            // Asumiendo que el texto está en un <span> dentro de .cubo-dev
             .span-dev {
                 position: absolute;
                 // bajar el texto para centrarlo verticalmente
                 top: 65%;
                 font-size: 3.5rem;
-                // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 transform: rotate(90deg); // Rota el texto para que aparezca vertical
                 display: block; // Hace que el span se comporte como un bloque para aplicar transformaciones
                 .ultima-letra {
-                    margin-left: -7px; /* Acercar la ultima letra de dev */
+                    margin-left: -0.4375rem; /* Acercar la ultima letra de dev */
                 }
             }
         }
     }
 }
 
+
+// @media (max-width: 1200px) {
+//     #hero {
+//         .titulo-hero .nombre, .titulo-hero .apellido, .titulo-desarrollador {
+//             font-size: 3rem; // Reduce font size
+//         }
+//         .descripcion-hero {
+//             font-size: 1.25rem; // Reduce font size
+//         }
+//         .cubo-hero {
+//             width: 100%;
+//             max-width: 37.5rem; // Reduce max-width
+//         }
+//         .boton-contacto {
+//             margin-left: 8rem; // Adjust position
+//         }
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     #hero {
+
+//         display: flex;
+//         align-items: center;
+//         // padding: 1rem;
+//         .titulo-hero .nombre, .titulo-hero .apellido, .titulo-desarrollador {
+//             font-size: 2rem; // Further reduce font size
+//         }
+//         .descripcion-hero {
+//             font-size: 1rem; // Further reduce font size
+//         }
+//         .cubo-hero {
+//             display: none;
+//             max-width: 30rem; // Further reduce max-width
+//             height: 12.5rem; // Reduce height
+//         }
+//         .boton-contacto {
+//             margin-left: 4rem; // Adjust position
+//         }
+//     }
+// }
+
+// @media (max-width: 480px) {
+//     #hero {
+//         padding: 0.5rem;
+//         .titulo-hero .nombre, .titulo-hero .apellido, .titulo-desarrollador {
+//             font-size: 1.5rem; // Further reduce font size
+//         }
+//         .descripcion-hero {
+//             font-size: 0.875rem; // Further reduce font size
+//             width: 100%; // Ensure full width
+//             max-width: none; // Remove max-width
+//         }
+//         .cubo-hero {
+//             width: 100%;
+//             max-width: none; // Remove max-width
+//             height: auto; // Let height adjust naturally
+//         }
+//         .boton-contacto {
+//             margin-left: 0; // Center the button
+//         }
+//     }
+// }

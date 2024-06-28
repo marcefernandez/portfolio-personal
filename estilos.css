@@ -14,6 +14,10 @@
 
 body {
   font-family: "Azonix", sans-serif;
+  background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), #090909 50%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f1ece7;
 }
 
 html {
@@ -37,25 +41,17 @@ html {
   background: #09222d; /* Oscurecer el color al pasar el mouse */
 }
 
-.contenedor {
-  width: 100%;
-  margin: 0 auto;
-  background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5), #090909 50%);
-  background-attachment: fixed;
-  color: #f1ece7;
-}
-
 #hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 2rem;
+  padding-left: 2rem;
   align-items: start;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 #hero::after {
   content: "";
@@ -81,8 +77,8 @@ html {
   z-index: 33;
 }
 #hero .redes-sociales .i-social {
-  width: 50px;
-  margin: 20px 0;
+  width: 3rem;
+  margin: 1.25rem 0;
   transition: transform 0.3s;
 }
 @keyframes scrollDown {
@@ -102,38 +98,37 @@ html {
 }
 #hero .titulo-hero .nombre {
   color: #ffffff;
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 1rem 0;
   z-index: 33;
 }
 #hero .titulo-hero .apellido {
   color: #ffffff;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 33;
 }
 #hero .titulo-desarrollador {
   color: #d9ff01;
-  font-family: "Sedgwick Ave Display", cursive;
-  margin-top: -100px;
+  margin-top: -6.25rem;
   font-weight: 300;
   font-style: italic;
   letter-spacing: 1px;
-  font-size: 4rem;
+  font-size: 2.3rem;
   animation-delay: 1s;
   z-index: 33;
 }
 #hero .descripcion-hero {
-  border: #d9ff01 1px solid;
+  border: 1px solid #d9ff01;
   box-shadow: 0 0 10px #d9ff01;
   background: rgba(86, 0, 156, 0.1);
-  width: 700px;
+  width: 40%;
   height: auto;
   border-radius: 10px;
-  padding: 20px;
-  font-size: 1.5rem;
+  padding: 1.25rem;
+  font-size: 1rem;
   font-family: sans-serif;
   font-weight: 700;
-  margin-top: 3rem;
+  margin-top: 1rem;
   animation-delay: 1s;
   animation-duration: 1.5s;
   z-index: 33;
@@ -156,8 +151,6 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  list-style-type: none;
-  padding: 0;
   margin-top: 1rem;
 }
 #hero .descripcion-hero .descripcion-hero-lista .descripcion-hero-item {
@@ -174,7 +167,7 @@ html {
   color: #d9ff01;
 }
 #hero .boton-contacto {
-  padding: 15px 30px;
+  padding: 1rem 1.875rem;
   border: none;
   margin-top: 3rem;
   margin-left: 12rem;
@@ -196,10 +189,10 @@ html {
 }
 #hero .silueta {
   position: absolute;
-  right: 150px;
-  bottom: 0; /* Ajusta esto según necesites la altura*/
-  height: 90%; /* Ajusta esto para cambiar el tamaño de la imagen */
-  z-index: 2; /* Asegúrate de que no sobrepase otros elementos importantes */
+  right: 9.375rem;
+  bottom: 0; /* Ajustar esto según la altura*/
+  height: 90%; /* Ajustar esto para cambiar el tamaño de la imagen */
+  z-index: 2;
 }
 #hero .cubo-hero {
   position: absolute;
@@ -208,8 +201,9 @@ html {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 10px 0 0 10px;
-  width: 650px;
-  height: 300px;
+  width: 90%;
+  max-width: 40.625rem;
+  height: 18.75rem;
   background: linear-gradient(to right, #ffe53b, #56009c);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: 1;
@@ -217,12 +211,12 @@ html {
 #hero .cubo-hero .cubo-dev {
   position: absolute;
   color: #56009c;
-  font-size: 2rem;
+  font-size: 1.25rem;
   top: 0;
   left: 15%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 300px;
+  width: 6.25rem;
+  height: 18.75rem;
   background-color: #090909;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   border-radius: 10px;
@@ -240,13 +234,13 @@ html {
   display: block;
 }
 #hero .cubo-hero .cubo-dev .span-dev .ultima-letra {
-  margin-left: -7px; /* Acercar la ultima letra de dev */
+  margin-left: -0.4375rem; /* Acercar la ultima letra de dev */
 }
 
 #seccion-menu {
   width: 100%;
-  padding: 30px 0 30px 0;
-  border-top: 0.5px solid #ffffff;
+  background: rgba(86, 0, 156, 0.1);
+  padding: 10px 0 10px 0;
 }
 #seccion-menu .nav {
   display: flex;
@@ -294,7 +288,7 @@ html {
   color: #f1ece7;
   font-size: 6rem;
   margin-bottom: 0;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 #about .about-titulo span {
   font-size: 6rem;
@@ -305,7 +299,7 @@ html {
   justify-content: center;
   color: #56009c;
   font-size: 3rem;
-  margin-top: -135px;
+  margin-top: -130px;
 }
 #about .about-container {
   width: 100%;
